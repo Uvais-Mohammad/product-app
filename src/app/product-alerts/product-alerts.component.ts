@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,EventEmitter,Input,Output } from '@angular/core';
 import { Product } from '../product';
 
 @Component({
@@ -9,7 +9,7 @@ import { Product } from '../product';
 export class ProductAlertsComponent {
 
 @Input() product!:Product;
-
+@Output() notify=new EventEmitter()
  clicked(){
   window.alert("You will be notified")
  }
