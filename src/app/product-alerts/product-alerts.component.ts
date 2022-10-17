@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input } from '@angular/core';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-product-alerts',
   templateUrl: './product-alerts.component.html',
   styleUrls: ['./product-alerts.component.css']
 })
-export class ProductAlertsComponent implements OnInit {
+export class ProductAlertsComponent {
 
-  constructor() { }
+@Input() product!:Product;
 
-  ngOnInit(): void {
-  }
+ clicked(){
+  window.alert("You will be notified")
+ }
 
 }
