@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,7 +11,7 @@ import { CartComponent } from './cart/cart.component';
 const routes: Routes = [
   { path: '', component: ProductListComponent },
   { path: 'products/:productId', component: ProductDetailsComponent },
-  {path:'cart',component:CartComponent}
+  { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({
@@ -22,7 +23,7 @@ const routes: Routes = [
     ProductDetailsComponent,
     CartComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
 })
